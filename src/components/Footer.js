@@ -1,22 +1,44 @@
 const Footer=()=>{
     return(
         <>
-            <div className="Footer bg-dark p-1 position-relative bottom-0 w-100 text-white d-flex justify-content-around align-items-center">
-                <div className="text-start">
-                    <h3>foody</h3>
-                    <p className="text-light">foody@gmail.com</p>
-                </div>
-                <div className="text-start">
-                    <h4>Company</h4>
-                    <p className="text-light">About</p>
-                    <p className="text-light">Career</p>
-                </div>
-                <div className="text-start">
-                    <h4>Contact Us</h4>
-                    <p className="text-light">Help & Support</p>
-                    <p className="text-light">Partner with us</p>
-                </div>
-            </div>
+           <div>
+                  
+                <footer className="text-center text-lg-start text-white" style={{backgroundColor:"#1c2331"}}>
+                    <section className="d-flex justify-content-between p-4 mt-3" style={{backgroundColor:"grey"}} >
+
+                    <div class="me-5">
+                    <span>Get connected with us on social networks:</span>
+                        </div>
+
+                        <div>
+                                <a href="" class="text-white me-4">
+                                     <i class="fab fa-facebook-f"></i>
+                                 </a>
+                                <a href="" class="text-white me-4">
+                                     <i class="fab fa-twitter"></i>
+                                 </a>
+                                 <a href="" class="text-white me-4">
+                                      <i class="fab fa-google"></i>
+                                  </a>
+                                 <a href="" class="text-white me-4">
+                                       <i class="fab fa-instagram"></i>
+                                  </a>
+                                 <a href="" class="text-white me-4">
+                                       <i class="fab fa-linkedin"></i>
+                                   </a>
+                                <a href="" class="text-white me-4">
+                                        <i class="fab fa-github"></i>
+                                    </a>
+                            </div>
+
+                    </section>
+                         
+                     
+
+                </footer>
+  
+
+           </div>
         </>
     )
 }

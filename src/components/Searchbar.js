@@ -1,6 +1,8 @@
 const Searchbar = () =>{
     return(
-        <div className="text-center">This is searchbar component</div>
+        <div className="text-center">
+            {/* This is searchbar component */}
+            </div>
     );
   }
 

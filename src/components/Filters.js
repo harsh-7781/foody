@@ -1,6 +1,9 @@
 const Filters = () => {
     return (
-      <div className="text-center">This is the Filter component</div>
+      <div className="text-center">
+        
+        This is the Filter component
+        </div>
     );
   }
 

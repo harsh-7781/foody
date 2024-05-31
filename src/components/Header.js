@@ -1,11 +1,11 @@
-import Logo from"../assets/images/png-transparent-logo-brand-font-food-product-restaurant-logo-design-food-label-text-thumbnail-removebg-preview.png"
+import Logo from"../assets/images/logo.png"
 
 const Header = () =>{
     return(
       <nav className="navbar p-0 navbar-expand-sm bg-light navbar-light">
       <div className="container-fluid">
         <a className="navbar-brand" href="#">
-          <img src={Logo} style={{width:"80px"}}/>
+          <img className="image" src={Logo} style={{width:"80px"}}/>
         </a>
         <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavbar">
           <span className="navbar-toggler-icon"></span>
