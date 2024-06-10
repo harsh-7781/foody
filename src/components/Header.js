@@ -2,7 +2,7 @@ import Logo from"../assets/images/logo.png"
 
 const Header = () =>{
     return(
-      <nav className="navbar p-0 navbar-expand-sm bg-light navbar-light">
+      <nav className="navbar p-0 navbar-expand-sm bg-light navbar-light mb-4">
       <div className="container-fluid">
         <a className="navbar-brand" href="#">
           <img className="image" src={Logo} style={{width:"80px"}}/>
@@ -12,8 +12,8 @@ const Header = () =>{
         </button>
         <div className="collapse navbar-collapse justify-content-end" id="collapsibleNavbar">
           <ul className="navbar-nav">
-            <li className="nav-item">
-              <a className="nav-link" href="#">Home🏠</a>
+            <li className="nav-item"> 
+              <a className="nav-link active" href="#">Home</a>
             </li>
             <li classNames="nav-item">
               <a className="nav-link" href="#">About Us😆</a>

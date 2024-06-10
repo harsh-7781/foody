@@ -73,3 +73,10 @@ Two types Which we are going to use
 1) Default imports/exports
 2) Named imports/exports
 3) React Hooks = useState, useEffect
+
+
+#useEffect
+there are two argumnets first is callback function(compulsory) and second is dependency array(optional)
+#case 1 : empty dependency array : useEffect is called only once after initial render 
+#case 2 : no dependency array : useeffect is called after every render
+#case 3 : dependency array with dependencies : useEffect is called after dependencies are changed

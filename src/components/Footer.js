@@ -3,7 +3,7 @@ const Footer=()=>{
         <>
            <div>
                   
-                <footer className="text-center text-lg-start text-white" style={{backgroundColor:"#1c2331"}}>
+                <footer className="text-center text-lg-start text-white footer" style={{backgroundColor:"#1c2331"}}>
                     <section className="d-flex justify-content-between p-4 mt-3" style={{backgroundColor:"grey"}} >
 
                     <div class="me-5">

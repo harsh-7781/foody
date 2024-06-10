@@ -1,4 +1,6 @@
 import { IMG_URL } from "./config";
+  
+
 
 
 const Restaurantcard = ({cloudinaryImageId, name, avgRating, sla, cuisines, areaName,}) =>{
@@ -12,13 +14,13 @@ const Restaurantcard = ({cloudinaryImageId, name, avgRating, sla, cuisines, area
                 />
            </div>
             <div >
-
+                    
                 <div className="space"> <h5>{name}</h5></div>
            
               <div className="d-flex justify-content-between">
-              <div> <i class="fa-solid fa-star" style={{color:"#FFD43B"}}> </i> {avgRating}</div>
+              <div> <i class="fa-solid fa-star" style={{color:"#FFD43B"}}> </i>  {avgRating}</div>
 
-                  <div>{sla?.deliveryTime}Min</div>
+                  <div className="time">{sla?.deliveryTime}Min</div>
              </div>
 
              <div className="overflow">

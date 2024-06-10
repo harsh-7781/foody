@@ -2,6 +2,7 @@
   width: 100%;
   max-width: 200px;
   transition: transform .3s;
+  cursor: pointer;
 
   /* transition: transform 0.5 ease-in ; */
 }
@@ -24,7 +25,7 @@
   overflow: hidden;
 }
 
- div.space  {
+ div.space h5  {
   white-space: nowrap;
   text-overflow: ellipsis;
   overflow: hidden;
@@ -49,34 +50,63 @@
   transform: scale(1);
   cursor: pointer;
 }
-.button {
-  border: none;
-  color: #fff;
-  background-image: linear-gradient(30deg, #0400ff, #4ce3f7);
+
+#searchInput{
+  width: 100%;
+  max-width: 300px;
+  padding: 5px;
   border-radius: 20px;
-  background-size: 100% auto;
-  font-family: inherit;
-  font-size: 17px;
-  padding: 0.6em 1.5em;
- }
- 
- .button:hover {
-  background-position: right center;
-  background-size: 200% auto;
-  -webkit-animation: pulse 2s infinite;
-  animation: pulse512 1.5s infinite;
- }
- 
- @keyframes pulse512 {
-  0% {
-   box-shadow: 0 0 0 0 #05bada66;
-  }
- 
-  70% {
-   box-shadow: 0 0 0 10px rgb(218 103 68 / 0%);
-  }
- 
-  100% {
-   box-shadow: 0 0 0 0 rgb(218 103 68 / 0%);
-  }
- }
+}
+
+.btn{
+  background-image: linear-gradient(135deg, #f34079 40%, #fc894d);
+}
+
+.carousel{
+    background-color: rgb(209, 207, 207);
+    width: 30px;
+    height: 30px;
+    border-radius: 20px;
+}
+/* .items{
+  display: flex;
+  justify-content: space-around;
+  justify-content: end;
+} */
+
+.title-carousel{
+  font-weight: 700;
+  font-size: 25px;
+}
+.carousel{
+  cursor: pointer;
+}
+
+.main-carousel{
+  border-radius: 50%;
+}
+
+.shimmerLine{
+  height: 10px;
+  background-color: #cac9c9;
+}
+
+.shimmerImg{
+  height: 200px;
+  width: 100%;
+  background-color: #cac9c9;
+
+}
+
+.shimmerWid{
+  width: 50px;
+}
+a:hover {
+  background-color: lightgrey;
+}
+.navbar{
+  box-shadow: 1px 4px 4px rgba(107, 102, 102, 0.5);
+}
+.footer{
+  box-shadow: 0px 10px 5px #888, 0px -5px 5px #524e4e;
+}
