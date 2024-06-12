@@ -16,7 +16,7 @@ console.log("restaurantList", restaurantData);
  
 
 
-
+ 
   
   const handleSearchText = (event) =>{
     setsearchText(event.target.value);
@@ -46,6 +46,8 @@ console.log("restaurantList", restaurantData);
     getRestaurants();
   }, [])
 
+  
+
   // console.log("component is rendered")
 //   setrestaurantData(restaurantList[1]?.card.card.gridElements?.infoWithStyle?.restaurants);
  
@@ -61,8 +63,8 @@ if(loading){
  return(
 
       <div>
-{/* 
-<div className="container mt-3 mb-3">
+ {/* 
+ <div className="container mt-3 mb-3">
       <div className="d-flex justify-content-between">
         <div className="title-carousel">This is the carousel component</div>
         <div className="d-flex">

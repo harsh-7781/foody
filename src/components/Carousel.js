@@ -1,6 +1,10 @@
 
-const Carousel = () => {
-
+const Carousel = ({url}) => {
+   return(
+    <div>
+      <img src={+url}/>
+    </div>
+   )
   
   
   // const fetchCatergory =async () =>{
