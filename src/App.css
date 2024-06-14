@@ -11,7 +11,7 @@
   height: 200px;
   object-fit: cover;
   border-radius: 20px;
-  transform: scale(0.90);
+  /* transform: scale(0.90); */
   cursor: pointer;
   box-shadow: 1px 4px 8px rgba(0, 0, 0, 0.5);
 }
