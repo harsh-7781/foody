@@ -5,7 +5,7 @@ const Footer=()=>{
                   
                 <footer className="text-center text-lg-start text-black footer" style={{backgroundColor:"#1c2331"}}>
                     <section className="d-flex p-4 mt-3" style={{backgroundColor:"cyan"}} >
-                   <nav className="site-footer">
+                   {/* <nav className="site-footer"> */}
                     <div class="site-footer me-5 d-block">
                     <h6 className="title">Swiggy Overflow</h6>
                          <ul className="connect">
@@ -30,7 +30,7 @@ const Footer=()=>{
                             </ul>
                             
                         </div>
-                        </nav>
+                        {/* </nav> */}
 
                        
                         
