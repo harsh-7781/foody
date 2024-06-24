@@ -15,7 +15,11 @@ const Body = () => {
         <Filters/>
         <Searchbar/>
       </div>
-      <Cardcontainer/>
+
+      
+     <div> <Cardcontainer/>
+     </div>
+      
       </>
     );
   }

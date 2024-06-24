@@ -5,7 +5,7 @@ const Carousel = ({url}) => {
   //     <img src={+url}/>
   //   </div>
   //  )
-  
+      
   
   }
 

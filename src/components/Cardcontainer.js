@@ -3,6 +3,7 @@
 import Restaurantcard from "./Restaurantcard"
 import { useEffect, useState } from "react";
 import Shimmer from "./Shimmer";
+import Logo from '../assets/images/000-http-error-codes.png'
 // import { FaArrowLeftLong,FaArrowRightLong} from "react-icons/fa6";
 
 const Cardcontainer = () =>{
@@ -110,13 +111,13 @@ if(isfailed){
         <div className="d-flex justify-between">
         <div className="container mb-3">
            <input id="searchInput" type="text" placeholder="Enter Restaurant Name" value={searchText} onChange={handleSearchText} />
-           <button className="btn btn-success" onClick={filterData} >🔍</button>
+           <button className="btn btn-success button" onClick={filterData} >🔍</button>
         </div>
         <div className="d-flex">
-          <button className="btn btn-dark btn-sm mb-3 px-3 mx-2 " onClick={handleDelivery}>Fast Delivery</button>
-          <button className="btn btn-dark btn-sm mb-3 px-3 mx-2 " onClick={handleToprated}>Top rated</button>
-          <button className="btn btn-dark btn-sm mb-3 px-3 mx-2 " onClick={handleVeg}>Pure Veg</button>
-          <button className="btn btn-dark btn-sm mb-3 px-3 mx-2 " onClick={handleShowall}>Show all</button>
+          <button className="btn btn-dark btn-sm mb-3 px-3 mx-2 button " onClick={handleDelivery}>Fast Delivery</button>
+          <button className="btn btn-dark btn-sm mb-3 px-3 mx-2 button" onClick={handleToprated}>Top rated</button>
+          <button className="btn btn-dark btn-sm mb-3 px-3 mx-2 button" onClick={handleVeg}>Pure Veg</button>
+          <button className="btn btn-dark btn-sm mb-3 px-3 mx-2 button" onClick={handleShowall}>Show all</button>
 
         </div>
         </div>
@@ -167,8 +168,10 @@ if(isfailed){
                     
           />
               )
-           }) : <h1>No Serached restaurant is found</h1>
-            // <div>  <img src="https://www.google.com/url?sa=i&url=https%3A%2F%2Fin.pinterest.com%2Fpin%2Flogo-stamp-label-vector-png-images-not-found-stamp-label-not-found-stamp-label-png-image-for-free-download--1117666832495499033%2F&psig=AOvVaw2Q1BxKgbKU1XamEHyVGa9m&ust=1718712907048000&source=images&cd=vfe&opi=89978449&ved=0CBQQjRxqFwoTCIiZjtfO4oYDFQAAAAAdAAAAABAE">  </img> </div>
+           }) : 
+           <div className="container align-item-center justify--contentcenter">
+           <a><img src={Logo} style={{width:"600px", height:"400px"}}/> </a>
+           </div>
           
          }
             
