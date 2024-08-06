@@ -111,7 +111,7 @@ if(isfailed){
         <div className="d-flex justify-between">
         <div className="container mb-3">
            <input id="searchInput" type="text" placeholder="Enter Restaurant Name" value={searchText} onChange={handleSearchText} />
-           <button className="btn btn-success button" onClick={filterData} >🔍</button>
+           <button className="btn btn-success button" style={{width:"70px", height:"40px"}} onClick={filterData} >🔍</button>
         </div>
         <div className="d-flex">
           <button className="btn btn-dark btn-sm mb-3 px-3 mx-2 button " onClick={handleDelivery}>Fast Delivery</button>
@@ -169,8 +169,9 @@ if(isfailed){
           />
               )
            }) : 
-           <div className="container align-item-center justify--contentcenter">
-           <a><img src={Logo} style={{width:"600px", height:"400px"}}/> </a>
+           <div className="text-danger flex-column container align-item-center d-flex justify-content-center">
+           <a><img src={Logo} style={{width:"auto", height:"auto"}}/> </a>
+               <h1>The Following Search restaurant Card is Not Available</h1>
            </div>
           
          }

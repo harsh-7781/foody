@@ -5,9 +5,9 @@ const Header = () =>{
     return(
       <nav className="navbar p-0 navbar-expand-sm bg-light navbar-light mb-4">
       <div className="container-fluid">
-        <a className="navbar-brand" href="#">
+        <Link  className="navbar-brand" to ="">
           <img className="image" src={Logo} style={{width:"80px"}}/>
-        </a>
+        </Link>
         <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavbar">
           <span className="navbar-toggler-icon"></span>
         </button>
@@ -27,7 +27,7 @@ const Header = () =>{
         <div className="collapse navbar-collapse justify-content-end" id="collapsibleNavbar">
           <ul className="navbar-nav gap-4">
             <li className="nav-item"> 
-              <Link to className="head Active">Home</Link>
+              <Link to ="" className="head Active">Home</Link>
             </li>
             <li classNames="nav-item">
               <Link to  ="/About"  className="head">About Us😆</Link>

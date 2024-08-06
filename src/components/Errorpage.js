@@ -1,18 +1,16 @@
-import { useRouteError } from "react-router-dom"
-import Logo from '../assets/images/000-http-error-codes.png'
-const Errorpage = () =>{
-   const errorObject = useRouteError()
-   console.log("errorObject", errorObject);
-    return(
-     <div className="justify-content-center d-grid">
-    <a className="mt-3"><img src={Logo} style={{width:"600px", height:"400px"}} /></a><br/> <hr/>
-     <div style={{backgroundColor:"red", textAlign:"center"}}> OOPS Something went wrong😪😥<br/>
-      Error:- {errorObject?.status} {errorObject?.statusText}<br/>
-      Description:- {errorObject.error.message} </div>
-     </div>
-     
-   
-    )
- }
+import { useRouteError } from "react-router-dom";
 
- export default Errorpage;
+const Errorpage = () =>{
+    const errorDetails = useRouteError();
+    console.log("errorDetails", errorDetails);
+    return (
+        <div className="text-danger d-flex flex-column justify-content-center align-items-center"
+         style={{position:"absolute", left:"50%", top:"50%", transform:"translate(-50%, -50%)"}}>
+            <h1>Oops Something went wrong </h1>
+            <h2>Error {errorDetails?.status} ({errorDetails?.statusText})</h2>
+            <h3>{errorDetails?.data}</h3> 
+        </div>
+    )
+}
+
+export default Errorpage;

@@ -7,6 +7,7 @@ import App from '../App'
 import Errorpage from './Errorpage';
 import Menu from './Menu';
 
+
 const appRouter = createBrowserRouter([
 
 
@@ -21,7 +22,7 @@ const appRouter = createBrowserRouter([
        [
     
         {
-            path: "About",
+            path: "about",
             element:<About/>
          },
     
@@ -31,19 +32,18 @@ const appRouter = createBrowserRouter([
          },
     
          {
-            path: "Contact",
+            path: "contact",
             element:<Contact/>
          },
     
          {
-            path: "Cart",
+            path: "cart",
             element:<Cart/>
          },
-
-         {
-            path: "Menu/:id",
-            element:<Menu/>
-         },
+          {
+            path : "menu/:id",
+            element : <Menu/>
+          }
        ]
     },
 
