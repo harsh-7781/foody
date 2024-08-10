@@ -2,6 +2,8 @@ import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
 import Resinfo from "./Resinfo";
 import Shimmer from '../components/Shimmer'
+import MenuSection from "./MenuSection";
+
 
 const Menu = () =>{
     // const params = useParams();
@@ -16,7 +18,7 @@ const Menu = () =>{
           const json = await data.json();
           setLoading(false)
           setMenuData(json?.data?.cards)
-          console.log("json", json?.data?.cards);
+          console.log("json", json?.data?.cards[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards);
         }
         catch(err){
             console.log("menu api error", err)
@@ -31,21 +33,122 @@ const Menu = () =>{
         </div> 
     }
 
-    const {name, avgRating, totalRatingString, costForTwoMessage, cuisines, sla,expectationNotifiers} = menuData[2]?.card?.card?.info
+    const menuCategories = menuData[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards
+ 
+
+    const normalMenu = menuCategories.filter((menuCategory)=>{
+        return (
+            menuCategory?.card?.card["@type"] ===
+            "type.googleapis.com/swiggy.presentation.food.v2.ItemCategory"
+          );
+    });
+
+    const nestedMenu = menuCategories.filter((menuCategory) => {
+        return (
+          menuCategory?.card?.card["@type"] === 
+          "type.googleapis.com/swiggy.presentation.food.v2.NestedItemCategory"
+        );
+      });
+
+      console.log("normal menu", normalMenu);
+      console.log("nestedMenu", nestedMenu);
+    
+
+    const {name, avgRating, totalRatingsString, costForTwoMessage, cuisines, sla,expectationNotifiers} = menuData[2]?.card?.card?.info
     const {slaString, lastMileTravelString} = sla;
     const {enrichedText} = expectationNotifiers[0]
     return(
-        <div>
+        <div className="container">
             <Resinfo
              name={name}
              avgRating={avgRating}
-             ratingCount={totalRatingString}
+             ratingCount={totalRatingsString}
              costforTwo={costForTwoMessage}
              cuisines={cuisines.join(", ")}
              deliveryTime={slaString}
              distance={lastMileTravelString}
              remark={enrichedText}
             />
+            <div>
+                {
+                    normalMenu.map((normalCategory)=>{
+                        return(
+                            <>
+                                <h6 key={normalCategory?.card?.card?.title}> {normalCategory?.card?.card?.title} </h6>
+                                
+                                {
+                                    normalCategory?.card?.card?.itemCards.map((dish)=>{
+                                        return(
+                                            <>
+                                            <MenuSection
+                                             isVeg={dish?.card?.info?.isVeg}
+                                             name={dish?.card?.info?.name}
+                                             costForTwo={dish?.card?.info?.defaultPrice ?  dish?.card?.info?.defaultPrice/100 : dish?.card?.info?.price/100}
+                                             avgRating={dish?.card?.info?.ratings?.aggregatedRating?.rating}
+                                             ratingCount={dish?.card?.info?.ratings?.aggregatedRating?.ratingCount}
+                                             description={dish?.card?.info?.description}
+                                             imageUrl={dish?.card?.info?.imageId}
+                                            />
+                                             <hr style={{border:"1px solid black"}}/>
+                                            </>
+                                        )
+                                            
+                                        
+                                    })
+                                }
+
+                                {/* <MenuSection
+                                 isVeg={normalCategory?.card?.card?.itemCards[0]?.card?.info?.isVeg}
+                                 name={normalCategory?.card?.card?.itemCards[0]?.card?.info?.name}
+                                 costForTwo={normalCategory?.card?.card?.itemCards[0]?.card?.info?.defaultPrice/100}
+                                 avgRating={normalCategory?.card?.card?.itemCards[0]?.card?.info?.ratings?.aggregatedRating?.rating}
+                                 ratingCount={normalCategory?.card?.card?.itemCards[0]?.card?.info?.ratings?.aggregatedRating?.ratingCount}
+                                 description={normalCategory?.card?.card?.itemCards[0]?.card?.info?.description}
+                                 imageUrl={normalCategory?.card?.card?.itemCards[0]?.card?.info?.imageId}
+                                 /> */}
+                            </>
+                        )
+                    })
+                }
+            </div>
+            <div>
+               {
+                nestedMenu.map((category)=>{
+                    return(
+                        <div>
+                        <h4>{category?.card?.card?.title}</h4>
+                        {
+                            category?.card?.card?.categories.map((subCategory)=>{
+                                return(
+                                    <div>
+                                    <h5 className="text-secondary">{subCategory?.title}</h5>
+                                    {
+                                        subCategory?.itemCards.map((dish)=>{
+                                            return(
+                                                <MenuSection
+                                             isVeg={dish?.card?.info?.isVeg}
+                                             name={dish?.card?.info?.name}
+                                             costForTwo={dish?.card?.info?.defaultPrice ?  dish?.card?.info?.defaultPrice/100 : dish?.card?.info?.price/100}
+                                             avgRating={
+                                                dish?.card?.info?.ratings?.aggregatedRating?.rating
+                                            }
+                                             ratingCount={dish?.card?.info?.ratings?.aggregatedRating?.ratingCount}
+                                             description={dish?.card?.info?.description}
+                                             imageUrl={dish?.card?.info?.imageId}
+                                            /> 
+                                            )
+                                        })
+                                    }
+                                    </div>
+
+                                )
+                            })
+                        }
+                        </div>
+                    )
+                })
+               }
+            </div>
         </div>
     )
 }

@@ -1,13 +1,13 @@
 import React from 'react'
 
-const Resinfo = ({name, avgRating, cuisines, deliveryTime, distance, costforTwo, ratingCount, remark}) => {
+const Resinfo = ({name, avgRating, cuisines, deliveryTime, costforTwo, ratingCount, remark}) => {
   return (
-    <div>
+    <div className="container resinfo">
       <h1>{name}</h1>
       <p>⭐{avgRating}({ratingCount}){costforTwo}</p>
       <p>{cuisines}</p>
       <p>{deliveryTime}</p>
-      <p>🚲{distance}  | {remark} </p>
+      <p>🚲{remark.replace(/<\/?b>/g, "")}. </p>
     </div>
   )
 }

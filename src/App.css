@@ -338,5 +338,20 @@ button {
   left: 50%;
   transform: translate(-50%,-50%);
 }
+/* 
+.click-cards{
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    margin-left: 90px;
+} */
 
+.resinfo{
+  border: 2px solid black;
+  background: lightgray;
+  border-radius: 10px;
+}
 
+.menubar:hover{
+  background: lightgray;
+}
