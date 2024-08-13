@@ -4,6 +4,7 @@ import Restaurantcard from "./Restaurantcard"
 import { useEffect, useState } from "react";
 import Shimmer from "./Shimmer";
 import Logo from '../assets/images/000-http-error-codes.png'
+import useRestaurant from "../hooks/useRestaurant";
 // import { FaArrowLeftLong,FaArrowRightLong} from "react-icons/fa6";
 
 const Cardcontainer = () =>{
@@ -104,6 +105,8 @@ if(isfailed){
     </div>
   )
 }
+
+// const data = useRestaurant()
  
  return(
 

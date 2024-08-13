@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import Resinfo from "./Resinfo";
 import Shimmer from '../components/Shimmer'
 import MenuSection from "./MenuSection";
+import useMenu from "../hooks/useMenu";
 
 
 const Menu = () =>{
@@ -10,6 +11,8 @@ const Menu = () =>{
     const {id} = useParams();
     const [menuData,setMenuData] = useState([]);
     const [loading,setLoading] = useState(true);
+    const menuList = useMenu(id);
+    console.log("custom data hook",menuList);
 
     useEffect(()=>{
        const getMenu = async()=> {

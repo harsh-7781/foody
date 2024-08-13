@@ -1,14 +1,14 @@
 import Header from "./Header";
+import UserCLass from "./UserCLass";
+import User from "./User";
 
 const About = () =>{
    
    return(
-    <div>
-        
-        This is about component</div>
-
-
-
+      <>     <UserCLass/>
+      <User/>
+      </>
+ 
    )
 }
 
