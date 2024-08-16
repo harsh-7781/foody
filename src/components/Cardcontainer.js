@@ -5,6 +5,7 @@ import { useEffect, useState } from "react";
 import Shimmer from "./Shimmer";
 import Logo from '../assets/images/000-http-error-codes.png'
 import useRestaurant from "../hooks/useRestaurant";
+import Searchbar from "./Searchbar";
 // import { FaArrowLeftLong,FaArrowRightLong} from "react-icons/fa6";
 
 const Cardcontainer = () =>{
@@ -14,6 +15,8 @@ const Cardcontainer = () =>{
  const [isfailed,setIsFailed] = useState(false)
  const [restaurantCollection, setRestaurantCollection] = useState([]);
  const [searchText,setsearchText] = useState("")
+ const resObject = useRestaurant();
+ console.log("resObject", resObject)
 //  const [categories,setCategory] = useState([]);
 // console.log("restaurantList", restaurantData);
  
@@ -21,16 +24,17 @@ const Cardcontainer = () =>{
 
  
   
-  const handleSearchText = (event) =>{
-    setsearchText(event.target.value);
-  }
+  // const handleSearchText = (event) =>{
+  //   setsearchText(event.target.value);
+  // }
   
-   const filterData = ()=>{
-    const filteredData = restaurantCollection.filter((restaurant) =>{
-      return restaurant?.info?.name.toLowerCase().includes(searchText.toLowerCase())
-    })
-    setrestaurantData(filteredData);
-   }
+  //  const filterData = ()=>{
+  //   const filteredData = restaurantCollection.filter((restaurant) =>{
+  //     return restaurant?.info?.name.toLowerCase().includes(searchText.toLowerCase())
+  //   })
+  //   console.log(filterData);
+  //   setrestaurantData(filteredData);
+  //  }
     
    const handleDelivery = () =>{
        const filterData = restaurantCollection.filter((restaurant) =>{
@@ -58,35 +62,13 @@ const handleToprated = () =>{
   }
 
 
-  useEffect(()=>{
-
-    
-  const getRestaurants = async()=>{
-    try {
-      const data = await fetch("https://www.swiggy.com/dapi/restaurants/list/v5?lat=19.0744454&lng=72.91320429999999&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING")
-      const json = await data.json();
-      setLoading(false);
-      console.log("json", json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
-      setrestaurantData(json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
-      setRestaurantCollection(json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
-      // setCategory(json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
-    }
-    catch (err){
-      setLoading(false)
-      setIsFailed(true)
-      console.log("Something went wrong",err);
-    }
-  }
-
-    getRestaurants();
-  }, [])
 
   
 
   // console.log("component is rendered")
 //   setrestaurantData(restaurantList[1]?.card.card.gridElements?.infoWithStyle?.restaurants);
  
-if(loading){
+if(resObject?.loading){
   return (
     <div className="container d-flex flex-wrap gap-4">
       <Shimmer/> 
@@ -96,7 +78,7 @@ if(loading){
 }
 
 
-if(isfailed){
+if(resObject?.failed){
   return(
     <div>
       <h1>
@@ -112,10 +94,7 @@ if(isfailed){
 
       <div>
         <div className="d-flex justify-between">
-        <div className="container mb-3">
-           <input id="searchInput" type="text" placeholder="Enter Restaurant Name" value={searchText} onChange={handleSearchText} />
-           <button className="btn btn-success button" style={{width:"70px", height:"40px"}} onClick={filterData} >🔍</button>
-        </div>
+          <Searchbar collection={resObject.masterData} updater={resObject.updater}/>
         <div className="d-flex">
           <button className="btn btn-dark btn-sm mb-3 px-3 mx-2 button " onClick={handleDelivery}>Fast Delivery</button>
           <button className="btn btn-dark btn-sm mb-3 px-3 mx-2 button" onClick={handleToprated}>Top rated</button>
@@ -155,7 +134,7 @@ if(isfailed){
        
            {
              
-            restaurantData.length!==0 ? restaurantData.map((restaurant)=>{
+            resObject?.resData.length!==0 ? resObject?.resData.map((restaurant)=>{
                 return(
                   
                    <Restaurantcard

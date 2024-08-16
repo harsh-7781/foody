@@ -2,7 +2,7 @@ const Filters = () => {
     return (
       <div className="text-center">
         
-        {/* This is the Filter component */}
+        This is the Filter component
         </div>
     );
   }

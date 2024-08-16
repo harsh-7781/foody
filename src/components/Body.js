@@ -13,7 +13,7 @@ const Body = () => {
       <Carousel/>
       <div className="d-flex justify-content-between">
         <Filters/>
-        <Searchbar/>
+        {/* <Searchbar/> */}
       </div>
 
       
