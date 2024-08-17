@@ -6,6 +6,9 @@ import Body from './Body';
 import App from '../App'
 import Errorpage from './Errorpage';
 import Menu from './Menu';
+import { lazy } from 'react';
+import Instamart from './Instamart';
+const instamart = lazy(()=>import("./Instamart"))
 
 
 const appRouter = createBrowserRouter([
@@ -43,7 +46,11 @@ const appRouter = createBrowserRouter([
           {
             path : "menu/:id",
             element : <Menu/>
-          }
+          },
+          {
+            path: "Instamart",
+            element:<Instamart/>
+         }
        ]
     },
 

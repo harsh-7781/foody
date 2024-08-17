@@ -1,12 +1,16 @@
 import Logo from"../assets/images/logo.png"
 import { Link } from "react-router-dom";
+import useOnline from "../hooks/useOnline";
 
 const Header = () =>{
+   const isOnline = useOnline();
+   console.log("online status", isOnline);
     return(
       <nav className="navbar p-0 navbar-expand-sm bg-light navbar-light mb-4">
       <div className="container-fluid">
         <Link  className="navbar-brand" to ="">
           <img className="image" src={Logo} style={{width:"80px"}}/>
+          {/* <span>{isOnline ? "🟩" : "🟥"}</span> */}
         </Link>
         <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavbar">
           <span className="navbar-toggler-icon"></span>
@@ -34,7 +38,10 @@ const Header = () =>{
             </li>
             <li className="nav-item">
               <Link to ="/Contact" className="head">Contact📞</Link>
-            </li>    
+            </li>  
+            <li className="nav-item">
+              <Link to ="/Instamart" className="head">Instamart🎍</Link>
+            </li>   
             <li className="nav-item">
               <Link to ="/Cart" className="head">Cart🛒</Link>
             </li>   

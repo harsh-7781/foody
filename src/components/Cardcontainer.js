@@ -6,9 +6,11 @@ import Shimmer from "./Shimmer";
 import Logo from '../assets/images/000-http-error-codes.png'
 import useRestaurant from "../hooks/useRestaurant";
 import Searchbar from "./Searchbar";
+import useOnline from "../hooks/useOnline";
 // import { FaArrowLeftLong,FaArrowRightLong} from "react-icons/fa6";
 
 const Cardcontainer = () =>{
+  const isOnline = useOnline();
  const [count,setcount] = useState(0)
  const [restaurantData,setrestaurantData] = useState([])
  const [loading,setLoading] = useState(true)
