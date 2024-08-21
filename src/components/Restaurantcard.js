@@ -36,26 +36,3 @@ const Restaurantcard = ({cloudinaryImageId, name, avgRating, sla, cuisines, area
   }
 
   export default Restaurantcard
-
-
-
-
-
-  
-// const Restaurantcard=({areaName,avgRating,cuisines,name})=>{
-//     return(
-//         <div className="Restaurantcard mb-4 custom-card">
-//             <div className="image">
-//                 {/* <img src="https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/e0839ff574213e6f35b3899ebf1fc597" alt="" className="w-100" style={{height:"250px"}}/> */}
-//                 <h1></h1>
-//             </div>
-//             <div className="content px-2">
-//                 <h4>{name}</h4>
-//                 <div className="d-flex justify-content-between"><span>⭐{avgRating}</span> <span>25-30 mins</span></div>
-//                 <div>{cuisines.join(",")}</div>
-//                 <p>{areaName}</p>
-//             </div>
-//         </div>
-//     )
-// }
-// export default Restaurantcard

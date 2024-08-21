@@ -4,12 +4,15 @@ import Resinfo from "./Resinfo";
 import Shimmer from '../components/Shimmer'
 import MenuSection from "./MenuSection";
 import useMenu from "../hooks/useMenu";
+import NormalMenu from "./NormalMenu";
+import NestedMenu from "./NestedMenu";
 
 
 const Menu = () =>{
     const {id} = useParams();
     const menuList = useMenu(id);
     console.log("custom data hook",menuList);
+    const [activeIndex, setActiveIndex] = useState(0);
 
    
 
@@ -43,6 +46,17 @@ const Menu = () =>{
     const {name, avgRating, totalRatingsString, costForTwoMessage, cuisines, sla,expectationNotifiers} = menuList[2]?.card?.card?.info
     const {slaString, lastMileTravelString} = sla;
     const {enrichedText} = expectationNotifiers[0]
+
+   const showDetails = (val)=>{
+    if(activeIndex===val){
+        setActiveIndex(-1)
+    }
+    else{
+        setActiveIndex(val);
+    }
+   }
+
+
     return(
         <div className="container">
             <Resinfo
@@ -57,80 +71,50 @@ const Menu = () =>{
             />
             <div>
                 {
-                    normalMenu.map((normalCategory)=>{
+                    normalMenu.map((normalCategory, index)=>{
                         return(
-                            <>
-                                <h6 key={normalCategory?.card?.card?.title}> {normalCategory?.card?.card?.title} </h6>
-                                
-                                {
-                                    normalCategory?.card?.card?.itemCards.map((dish)=>{
-                                        return(
-                                            <>
-                                            <MenuSection
-                                             isVeg={dish?.card?.info?.isVeg}
-                                             name={dish?.card?.info?.name}
-                                             costForTwo={dish?.card?.info?.defaultPrice ?  dish?.card?.info?.defaultPrice/100 : dish?.card?.info?.price/100}
-                                             avgRating={dish?.card?.info?.ratings?.aggregatedRating?.rating}
-                                             ratingCount={dish?.card?.info?.ratings?.aggregatedRating?.ratingCount}
-                                             description={dish?.card?.info?.description}
-                                             imageUrl={dish?.card?.info?.imageId}
-                                            />
-                                             <hr style={{border:"1px solid black"}}/>
-                                            </>
-                                        )
-                                            
-                                        
-                                    })
-                                }
-
-                                {/* <MenuSection
-                                 isVeg={normalCategory?.card?.card?.itemCards[0]?.card?.info?.isVeg}
-                                 name={normalCategory?.card?.card?.itemCards[0]?.card?.info?.name}
-                                 costForTwo={normalCategory?.card?.card?.itemCards[0]?.card?.info?.defaultPrice/100}
-                                 avgRating={normalCategory?.card?.card?.itemCards[0]?.card?.info?.ratings?.aggregatedRating?.rating}
-                                 ratingCount={normalCategory?.card?.card?.itemCards[0]?.card?.info?.ratings?.aggregatedRating?.ratingCount}
-                                 description={normalCategory?.card?.card?.itemCards[0]?.card?.info?.description}
-                                 imageUrl={normalCategory?.card?.card?.itemCards[0]?.card?.info?.imageId}
-                                 /> */}
-                            </>
-                        )
+                           <NormalMenu normalCollection={normalCategory} isActive={activeIndex===index} 
+                           toggleFunction={()=>showDetails(index)}/>
+                        );
                     })
                 }
+                <NormalMenu normalCollection={normalMenu}/>
             </div>
             <div>
                {
                 nestedMenu.map((category)=>{
                     return(
-                        <div>
-                        <h4>{category?.card?.card?.title}</h4>
-                        {
-                            category?.card?.card?.categories.map((subCategory)=>{
-                                return(
-                                    <div>
-                                    <h5 className="text-secondary">{subCategory?.title}</h5>
-                                    {
-                                        subCategory?.itemCards.map((dish)=>{
-                                            return(
-                                                <MenuSection
-                                             isVeg={dish?.card?.info?.isVeg}
-                                             name={dish?.card?.info?.name}
-                                             costForTwo={dish?.card?.info?.defaultPrice ?  dish?.card?.info?.defaultPrice/100 : dish?.card?.info?.price/100}
-                                             avgRating={
-                                                dish?.card?.info?.ratings?.aggregatedRating?.rating
-                                            }
-                                             ratingCount={dish?.card?.info?.ratings?.aggregatedRating?.ratingCount}
-                                             description={dish?.card?.info?.description}
-                                             imageUrl={dish?.card?.info?.imageId}
-                                            /> 
-                                            )
-                                        })
-                                    }
-                                    </div>
+                        <NestedMenu collection={category}/>
+                        // <div>
+                        // <h4>{category?.card?.card?.title}</h4>
+                        // {
+                        //     category?.card?.card?.categories.map((subCategory)=>{
+                        //         return(
+                        //             <div>
+                        //             <h5 className="text-secondary">{subCategory?.title}</h5>
+                        //             {
+                        //                 subCategory?.itemCards.map((dish)=>{
+                        //                     return(
+                        //                         <MenuSection
+                        //                      isVeg={dish?.card?.info?.isVeg}
+                        //                      name={dish?.card?.info?.name}
+                        //                      costForTwo={dish?.card?.info?.defaultPrice ?  dish?.card?.info?.defaultPrice/100 : dish?.card?.info?.price/100}
+                        //                      avgRating={
+                        //                         dish?.card?.info?.ratings?.aggregatedRating?.rating
+                        //                     }
+                        //                      ratingCount={dish?.card?.info?.ratings?.aggregatedRating?.ratingCount}
+                        //                      description={dish?.card?.info?.description}
+                        //                      imageUrl={dish?.card?.info?.imageId}
+                        //                     /> 
+                        //                     )
+                        //                 })
+                        //             }
+                        //             </div>
 
-                                )
-                            })
-                        }
-                        </div>
+                        //         )
+                        //     })
+                        // }
+                        // </div>
                     )
                 })
                }

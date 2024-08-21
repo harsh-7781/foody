@@ -6,7 +6,7 @@ const Carousel = ({url}) => {
   //   </div>
   //  )
       
-  
+  return Carousel 
   }
 
   export default Carousel
