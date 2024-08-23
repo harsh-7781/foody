@@ -1,10 +1,11 @@
 
 const Carousel = ({url}) => {
-  //  return(
-  //   <div>
-  //     <img src={+url}/>
-  //   </div>
-  //  )
+   return(
+    <div>
+      hi
+
+    </div>
+   )
       
   return Carousel 
   }

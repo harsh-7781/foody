@@ -348,10 +348,149 @@ button {
 
 .resinfo{
   border: 2px solid black;
-  background: lightgray;
   border-radius: 10px;
+  margin-bottom: 20px;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
 
 .menubar:hover{
   background: lightgray;
+}
+
+
+
+.about-us-container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  font-family: Arial, sans-serif;
+}
+
+.about-us-container h1 {
+  text-align: center;
+  color: #333;
+}
+
+.about-us-container h2 {
+  margin-top: 20px;
+  color: #555;
+}
+
+.about-us-container p {
+  line-height: 1.6;
+  color: #666;
+}
+
+.about-us-container ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.about-us-container li {
+  margin: 10px 0;
+  padding-left: 10px;
+  position: relative;
+}
+
+.about-us-container li:before {
+  content: "✔"; /* Checkmark icon */
+  color: #ff6347; /* Tomato color */
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+
+
+ /* contact us */
+
+ .contact-us-container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  font-family: Arial, sans-serif;
+}
+
+.contact-us-container h1 {
+  text-align: center;
+  color: #333;
+}
+
+.contact-us-container h2 {
+  margin-top: 20px;
+  color: #555;
+}
+
+.contact-us-container p {
+  line-height: 1.6;
+  color: #666;
+}
+
+.contact-details ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.contact-details li {
+  margin: 10px 0;
+}
+
+.contact-form {
+  margin-top: 20px;
+}
+
+.form-group {
+  margin-bottom: 15px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.form-group textarea {
+  height: 100px;
+  resize: vertical;
+}
+
+button[type="submit"] {
+  padding: 10px 15px;
+  background-color: #ff6347;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button[type="submit"]:hover {
+  background-color: #ff4500;
+}
+
+.map {
+  margin-top: 30px;
+}
+
+.map-embed {
+  width: 100%;
+  height: 0;
+  padding-bottom: 56.25%; /* 16:9 aspect ratio */
+  position: relative;
+}
+
+.map-embed iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
 }

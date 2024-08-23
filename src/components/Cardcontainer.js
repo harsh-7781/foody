@@ -1,16 +1,18 @@
 // import { Carousel } from "bootstrap";
 // import { Carousel } from "bootstrap";
 import Restaurantcard from "./Restaurantcard"
-import { useEffect, useState } from "react";
+import { useEffect, useState, useContext } from "react";
 import Shimmer from "./Shimmer";
 import Logo from '../assets/images/000-http-error-codes.png'
 import useRestaurant from "../hooks/useRestaurant";
 import Searchbar from "./Searchbar";
 import useOnline from "../hooks/useOnline";
+import UserContext from "../Utlis/UserContext";
 // import { FaArrowLeftLong,FaArrowRightLong} from "react-icons/fa6";
 
 const Cardcontainer = () =>{
   const isOnline = useOnline();
+  const {username, setName} = useContext(UserContext)
  const [count,setcount] = useState(0)
  const [restaurantData,setrestaurantData] = useState([])
  const [loading,setLoading] = useState(true)
@@ -26,17 +28,17 @@ const Cardcontainer = () =>{
 
  
   
-  // const handleSearchText = (event) =>{
-  //   setsearchText(event.target.value);
-  // }
+  const handleSearchText = (event) =>{
+    setsearchText(event.target.value);
+  }
   
-  //  const filterData = ()=>{
-  //   const filteredData = restaurantCollection.filter((restaurant) =>{
-  //     return restaurant?.info?.name.toLowerCase().includes(searchText.toLowerCase())
-  //   })
-  //   console.log(filterData);
-  //   setrestaurantData(filteredData);
-  //  }
+   const filterData = ()=>{
+    const filteredData = restaurantCollection.filter((restaurant) =>{
+      return restaurant?.info?.name.toLowerCase().includes(searchText.toLowerCase())
+    })
+    console.log(filterData);
+    setrestaurantData(filteredData);
+   }
     
    const handleDelivery = () =>{
        const filterData = restaurantCollection.filter((restaurant) =>{
@@ -97,6 +99,7 @@ if(resObject?.failed){
       <div>
         <div className="d-flex justify-between">
           <Searchbar collection={resObject.masterData} updater={resObject.updater}/>
+          {/* <input type="text" value={username} onChange={(e)=>setName(e.target.value)}/> */}
         <div className="d-flex">
           <button className="btn btn-dark btn-sm mb-3 px-3 mx-2 button " onClick={handleDelivery}>Fast Delivery</button>
           <button className="btn btn-dark btn-sm mb-3 px-3 mx-2 button" onClick={handleToprated}>Top rated</button>
@@ -105,29 +108,6 @@ if(resObject?.failed){
 
         </div>
         </div>
- {/* 
- <div className="container mt-3 mb-3">
-      <div className="d-flex justify-content-between">
-        <div className="title-carousel">This is the carousel component</div>
-        <div className="d-flex">
-          <div className="carousel mx-1 d-flex justify-content-center pt-2"><FaArrowLeftLong /></div>
-          <div className="carousel mx-1 d-flex justify-content-center pt-2"><FaArrowRightLong /></div>
-        </div>
-        </div>
-
-        <div className="d-flex overflow-hidden container"> 
-          {
-            categories.map((restaurant)=>{
-              return(
-                <Restaurantcard
-                  {...restaurant?.info}
-                />
-              )
-             
-            })
-          }
-        </div>
-        </div> */}
  
 
        
