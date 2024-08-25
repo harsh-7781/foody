@@ -3,6 +3,11 @@ import { Link } from "react-router-dom";
 import useOnline from "../hooks/useOnline";
 import UserContext from "../Utlis/UserContext";
 import { useContext } from "react";
+import { FaHome } from "react-icons/fa";
+import { RiVipCrownFill } from "react-icons/ri";
+import { IoIosContact } from "react-icons/io";
+import { SiInstatus } from "react-icons/si";
+import { FaCartPlus } from "react-icons/fa";
 
 const Header = () =>{
    const isOnline = useOnline();
@@ -25,19 +30,19 @@ const Header = () =>{
         <div className="collapse navbar-collapse justify-content-end" id="collapsibleNavbar">
           <ul className="navbar-nav gap-4">
             <li className="nav-item"> 
-              <Link to ="" className="head Active">Home</Link>
+              <Link to ="" className="head Active"><strong><FaHome  style={{marginRight:"5px"}}/>Home</strong></Link>
             </li>
             <li classNames="nav-item">
-              <Link to  ="/About"  className="head">About Us😆</Link>
+              <Link to  ="/About"  className="head"><strong><RiVipCrownFill />About Us</strong></Link>
             </li>
             <li className="nav-item">
-              <Link to ="/Contact" className="head">Contact📞</Link>
+              <Link to ="/Contact" className="head"><strong><IoIosContact  />Contact</strong></Link>
             </li>  
             <li className="nav-item">
-              <Link to ="/Instamart" className="head">Instamart🎍</Link>
+              <Link to ="/Instamart" className="head"><strong><SiInstatus />Instamart</strong></Link>
             </li>   
             <li className="nav-item">
-              <Link to ="/Cart" className="head">Cart🛒</Link>
+              <Link to ="/Cart" className="head"><strong>Cart<FaCartPlus /></strong></Link>
             </li>   
             <li className="nav-item">
               {userData?.username}

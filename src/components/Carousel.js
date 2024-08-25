@@ -2,7 +2,7 @@
 const Carousel = ({url}) => {
    return(
     <div>
-      hi
+      {/* hi */}
 
     </div>
    )

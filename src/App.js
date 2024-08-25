@@ -25,5 +25,4 @@ const App = () => {
      </UserContext.Provider>
   );
 }
-
 export default App;

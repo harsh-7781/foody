@@ -19,7 +19,7 @@ const Searchbar = ({collection, updater}) =>{
     return(
         <div className="container mb-3">
         <input id="searchInput" type="text" placeholder="Enter Restaurant Name" value={searchText} onChange={handleSearchText} />
-        <button className="btn btn-success button" style={{width:"70px", height:"40px"}} onClick={filterData} >🔍</button>
+        <button className="btn button" style={{width:"70px", height:"40px"}} onClick={filterData} >🔍</button>
      </div>
     );
   }

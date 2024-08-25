@@ -1,36 +1,65 @@
+// src/About.js
 import React from 'react';
+import { motion } from 'framer-motion';
 const About = () => {
   return (
-    <div className="about-us-container">
-      <h1>About Us</h1>
-      <section>
-        <h2>Who We Are</h2>
-        <p>
-          Welcome to <strong>[foody]</strong>, where food meets convenience! We are on a mission to revolutionize the way you enjoy your favorite meals, offering a seamless and satisfying experience from the moment you open our app to the time your food is delivered.
-        </p>
-      </section>
-      <section>
-        <h2>Our Mission</h2>
-        <p>
-          We believe that food should be an experience—one that’s fast, convenient, and full of flavor. Our mission is to make every meal memorable by providing an intuitive platform that delivers your cravings with just a few taps. Whether you're looking for a quick bite or planning a feast, we’re here to serve you the best options in town.
-        </p>
-      </section>
-      <section>
-        <h2>Why Choose Us?</h2>
-        <ul>
-          <li><strong>Diverse Cuisine:</strong> Discover a world of flavors with our extensive menu selections, featuring everything from local favorites to international dishes.</li>
-          <li><strong>Speedy Delivery:</strong> We value your time, which is why we partner with the fastest delivery services to ensure your food arrives hot and fresh.</li>
-          <li><strong>User-Friendly Experience:</strong> Our app is designed with you in mind—easy to navigate, quick to order, and reliable every time.</li>
-          <li><strong>Quality Assurance:</strong> We work closely with our partner restaurants to maintain the highest standards of food quality and hygiene.</li>
-        </ul>
-      </section>
-      <section>
-        <h2>Join the [foody] Family</h2>
-        <p>
-          We’re more than just a food delivery service—we’re your partner in creating delicious moments. Download our app today and experience the future of food delivery.
-        </p>
-      </section>
-    </div>
+    <motion.div
+      className="about-container"
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ duration: 1 }}
+    >
+      <motion.h1
+        className="about-title"
+        initial={{ scale: 0 }}
+        animate={{ scale: 1 }}
+        transition={{ duration: 0.5 }}
+      >
+        About Us
+      </motion.h1>
+      
+      <motion.div
+        className="about-images"
+        initial={{ scale: 0.8, opacity: 0 }}
+        animate={{ scale: 1, opacity: 1 }}
+        transition={{ duration: 0.8 }}
+      >
+        <motion.img
+          src="https://miro.medium.com/v2/resize:fit:948/1*D26YPlCdw4hd1cwMO6rAYw.png" 
+          className="about-image"
+          whileHover={{ scale: 1.05 }}
+        />
+        <motion.img
+          src="https://www.goteso.com/products/assets/images/clone-scripts/swiggy/swiggy-app-clone-banner.png" 
+          alt="Food Delivery"
+          className="about-image"
+          whileHover={{ scale: 1.05 }}
+        />
+        <motion.img
+          src="https://mir-s3-cdn-cf.behance.net/project_modules/1400/51cde279346663.5d9763dc3c4b2.jpg" 
+          alt="Delicious Food"
+          className="about-image"
+          whileHover={{ scale: 1.05 }}
+        />
+      </motion.div>
+      
+      <motion.p
+        className="about-description"
+        initial={{ y: 50, opacity: 0 }}
+        animate={{ y: 0, opacity: 1 }}
+        transition={{ duration: 0.7 }}
+      >
+        Welcome to our Swiggy clone website! Our mission is to deliver your favorite food to your doorstep swiftly and safely.
+      </motion.p>
+      <motion.p
+        className="about-description"
+        initial={{ y: 50, opacity: 0 }}
+        animate={{ y: 0, opacity: 1 }}
+        transition={{ duration: 0.7, delay: 0.2 }}
+      >
+        We have a wide variety of restaurants available for you to choose from. Enjoy delicious meals anytime, anywhere.
+      </motion.p>
+    </motion.div>
   );
 };
 

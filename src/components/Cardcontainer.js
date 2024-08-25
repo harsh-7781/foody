@@ -28,17 +28,17 @@ const Cardcontainer = () =>{
 
  
   
-  const handleSearchText = (event) =>{
-    setsearchText(event.target.value);
-  }
+  // const handleSearchText = (event) =>{
+  //   setsearchText(event.target.value);
+  // }
   
-   const filterData = ()=>{
-    const filteredData = restaurantCollection.filter((restaurant) =>{
-      return restaurant?.info?.name.toLowerCase().includes(searchText.toLowerCase())
-    })
-    console.log(filterData);
-    setrestaurantData(filteredData);
-   }
+  //  const filterData = ()=>{
+  //   const filteredData = restaurantCollection.filter((restaurant) =>{
+  //     return restaurant?.info?.name.toLowerCase().includes(searchText.toLowerCase())
+  //   })
+  //   console.log(filterData);
+  //   setrestaurantData(filteredData);
+  //  }
     
    const handleDelivery = () =>{
        const filterData = restaurantCollection.filter((restaurant) =>{
@@ -56,7 +56,7 @@ const Cardcontainer = () =>{
 
 const handleToprated = () =>{
   const filterData = restaurantCollection.filter((restaurant) =>{
-   return restaurant?.info?.avgRating
+   return restaurant?.info?.avgRating >=4.5
  })
  setrestaurantData(filterData);
 }
