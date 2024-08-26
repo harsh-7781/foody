@@ -24,18 +24,18 @@ const About = () => {
         animate={{ scale: 1, opacity: 1 }}
         transition={{ duration: 0.8 }}
       >
-        <motion.img
+        <motion.img style={{cursor:"pointer"}}
           src="https://miro.medium.com/v2/resize:fit:948/1*D26YPlCdw4hd1cwMO6rAYw.png" 
           className="about-image"
           whileHover={{ scale: 1.05 }}
         />
-        <motion.img
+        <motion.img style={{cursor:"pointer"}}
           src="https://www.goteso.com/products/assets/images/clone-scripts/swiggy/swiggy-app-clone-banner.png" 
           alt="Food Delivery"
           className="about-image"
           whileHover={{ scale: 1.05 }}
         />
-        <motion.img
+        <motion.img style={{cursor:"pointer"}}
           src="https://mir-s3-cdn-cf.behance.net/project_modules/1400/51cde279346663.5d9763dc3c4b2.jpg" 
           alt="Delicious Food"
           className="about-image"

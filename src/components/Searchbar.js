@@ -16,6 +16,7 @@ const Searchbar = ({collection, updater}) =>{
         updater(filteredData);
        }
 
+
     return(
         <div className="container mb-3">
         <input id="searchInput" type="text" placeholder="Enter Restaurant Name" value={searchText} onChange={handleSearchText} />

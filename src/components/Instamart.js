@@ -1,4 +1,4 @@
-// src/Instamart.js
+import { Link } from 'react-router-dom';
 import React from 'react';
 import { motion } from 'framer-motion';
 const Instamart = () => {
@@ -34,14 +34,14 @@ const Instamart = () => {
         animate={{ scale: 1, opacity: 1 }}
         transition={{ duration: 0.8 }}
       >
-        <motion.img
-          src="https://thehardcopy.co/wp-content/uploads/Swiggy-Instamart-Design-Process-.jpg" // Replace with actual image URL
+        <motion.img style={{cursor:"pointer"}}
+          src="https://thehardcopy.co/wp-content/uploads/Swiggy-Instamart-Design-Process-.jpg" 
           alt="Groceries"
           className="instamart-image"
           whileHover={{ scale: 1.05 }}
         />
-        <motion.img
-          src="https://i0.wp.com/www.medianama.com/wp-content/uploads/2024/04/Swiggy-Instamart.png?fit=2000%2C1125&ssl=1" // Replace with actual image URL
+        <motion.img style={{cursor:"pointer"}}
+          src="https://i0.wp.com/www.medianama.com/wp-content/uploads/2024/04/Swiggy-Instamart.png?fit=2000%2C1125&ssl=1" 
           alt="Delivery"
           className="instamart-image"
           whileHover={{ scale: 1.05 }}
@@ -52,7 +52,7 @@ const Instamart = () => {
         className="instamart-button"
         whileHover={{ scale: 1.1 }}
       >
-        Start Shopping
+      <Link to="/" style={{textDecoration:"none", color:"white"}}>  Start Shopping </Link>
       </motion.button>
     </motion.div>
   );

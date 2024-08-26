@@ -3,11 +3,14 @@ import Filters from "./Filters.js"
 import Searchbar from "./Searchbar.js"
 import Cardcontainer from "./Cardcontainer"
 
-
 const Body = () => {
     return (
+      
       <>
       <div className="text-black text-center">
+     
+      
+
         {/* This is the body component */}
         </div>
       <Carousel/>

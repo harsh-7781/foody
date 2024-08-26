@@ -1,5 +1,4 @@
 import { useEffect, useState} from "react"
-
 const useRestaurant = () =>{
 
     const[restaurantData, setRestaurantData] = useState([]);

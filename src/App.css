@@ -133,61 +133,6 @@ hr{
   }
 }
 
-/* @media screen and (max-width: 550px){
-   .sb__footer-heading h1{
-    font-size: 34px;
-    line-height: 42px;
-   }
-
-   .sb__footer-links div{
-     margin: 1rem 0;
-   }
-
-   .sb__footer-btn p{
-    font-size: 14px;
-    line-height: 20px;
-   }
-
-   .sb__footer-below{
-    flex-direction: column;
-    justify-content: left;
-  }
-
-  .sb__footer-below-links{
-    flex-direction: column;
-  }
-
-  .sb__footer-below-links p{
-    margin-left: 0rem;
-    margin-top: 1rem;
-    display: flex;
-    text-decoration: none;
-  }
-} */
-
-/* @media screen and (max-width: 550px){
-  .sb__footer-heading h1{
-    font-size: 27px;
-    line-height: 38px;
-  }
-} */
-
-
-
-
-/* 
-.site-footer .title{
-  text-transform: uppercase;
-  font-weight: bold;
-  
-}
-
-.site-footer{
-  display: flex;
-  flex:  2 1 auto;
-  flex-wrap: wrap;
-} */
-
 .connect {
   margin: 0;
   list-style: none;
@@ -226,86 +171,29 @@ hr{
   border-radius: 20px;
 }
 
-/* .btn{
-  background-image: linear-gradient(135deg, #f34079 40%, #fc894d);
-} */
-
-/* button {
+.button {
   width: 9em;
-  height: 3em;
-  font-size: 15px;
-  font-family: inherit;
-  border: none;
-  position: relative;
-  overflow: hidden;
-  z-index: 1;
-  box-shadow: 6px 6px 12px #c5c5c5,
-              -6px -6px 12px #ffffff;
- }
- 
- button::before {
-  content: '';
-  width: 0;
-  height: 3em;
-  position: absolute;
-  top: 0;
-  left: 0;
-  background-image: linear-gradient(to right, #0fd850 0%, #f9f047 100%);
-  transition: .5s ease;
-  display: block;
-  z-index: -1;
- }
- 
- button:hover::before {
-  width: 9em;
- } */
-
- /* .button {
+  background-color: #3498db;
+  border: none; 
+  border-radius: 5px; 
+  color: #fff; 
   padding: 10px 20px;
-  font-size: 16px;
-  color: #ffffff;
-  background-color: #007bff;
-  border: none;
-  border-radius: 5px;
+  font-size: 16px; 
   cursor: pointer;
-  transition: background-color 0.3s ease;
+  text-align: center;
+  text-decoration: none; 
+  display: inline-block; 
+  transition: background-color 0.3s ease, transform 0.2s ease; 
 }
 
 .button:hover {
-  background-color: #0056b3;
-}
-
-.button:active {
-  background-color: #004494;
+  background-color: #2980b9; 
+  transform: scale(1.05); 
 }
 
 .button:focus {
   outline: none;
-  box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.5);
-} */
-.button {
-  width: 9em;
-  background-color: #3498db; /* Blue background */
-  border: none; /* No border */
-  border-radius: 5px; /* Slightly rounded corners */
-  color: #fff; /* White text color */
-  padding: 10px 20px; /* Padding inside the button */
-  font-size: 16px; /* Font size of the text */
-  cursor: pointer; /* Pointer cursor on hover */
-  text-align: center; /* Center-aligns text */
-  text-decoration: none; /* No underline */
-  display: inline-block; /* Ensures padding is applied correctly */
-  transition: background-color 0.3s ease, transform 0.2s ease; /* Smooth transitions */
-}
-
-.button:hover {
-  background-color: #2980b9; /* Darker blue on hover */
-  transform: scale(1.05); /* Slightly enlarges the button on hover */
-}
-
-.button:focus {
-  outline: none; /* Removes default focus outline */
-  box-shadow: 0 0 0 3px rgba(41, 98, 255, 0.5); /* Custom focus outline */
+  box-shadow: 0 0 0 3px rgba(41, 98, 255, 0.5); 
 }
 
 
@@ -530,7 +418,7 @@ button[type="submit"]:hover {
 .map-embed {
   width: 100%;
   height: 0;
-  padding-bottom: 56.25%; /* 16:9 aspect ratio */
+  padding-bottom: 56.25%; 
   position: relative;
 }
 
@@ -543,8 +431,6 @@ button[type="submit"]:hover {
   border: 0;
 }
 
-
-/* src/About.css */
 .about-container {
   padding: 20px;
   text-align: center;
@@ -565,8 +451,8 @@ button[type="submit"]:hover {
 }
 
 .about-image {
-  width: 240px;
-  height: 150px;
+  width: 70%px;
+  height: 250px;
   border-radius: 10px;
   object-fit: cover;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -675,8 +561,8 @@ button[type="submit"]:hover {
 }
 
 .instamart-image {
-  width: 200px;
-  height: 150px;
+  width: 60%px;
+  height: 230px;
   border-radius: 10px;
   object-fit: cover;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -701,3 +587,5 @@ button[type="submit"]:hover {
 .instamart-button:hover {
   transform: scale(1.1);
 }
+
+
