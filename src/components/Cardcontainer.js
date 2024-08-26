@@ -56,7 +56,7 @@ if(resObject?.failed){
           <Filters collection={resObject.masterData} updater={resObject.updater} />
           
         </div>
-
+         <hr style={{border:"2px solid black"}}/>
         
  
 
