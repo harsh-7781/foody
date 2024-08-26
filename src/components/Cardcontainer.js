@@ -1,5 +1,3 @@
-// import { Carousel } from "bootstrap";
-// import { Carousel } from "bootstrap";
 import Restaurantcard from "./Restaurantcard"
 import { useEffect, useState, useContext } from "react";
 import Shimmer from "./Shimmer";
@@ -8,7 +6,7 @@ import useRestaurant from "../hooks/useRestaurant";
 import Searchbar from "./Searchbar";
 import useOnline from "../hooks/useOnline";
 import UserContext from "../Utlis/UserContext";
-// import { FaArrowLeftLong,FaArrowRightLong} from "react-icons/fa6";
+import Filters from "./Filters";
 
 const Cardcontainer = () =>{
   const isOnline = useOnline();
@@ -21,8 +19,6 @@ const Cardcontainer = () =>{
  const [searchText,setsearchText] = useState("")
  const resObject = useRestaurant();
  console.log("resObject", resObject)
-//  const [categories,setCategory] = useState([]);
-// console.log("restaurantList", restaurantData);
  
 
 
@@ -31,46 +27,6 @@ const Cardcontainer = () =>{
   // const handleSearchText = (event) =>{
   //   setsearchText(event.target.value);
   // }
-  
-  //  const filterData = ()=>{
-  //   const filteredData = restaurantCollection.filter((restaurant) =>{
-  //     return restaurant?.info?.name.toLowerCase().includes(searchText.toLowerCase())
-  //   })
-  //   console.log(filterData);
-  //   setrestaurantData(filteredData);
-  //  }
-    
-   const handleDelivery = () =>{
-       const filterData = restaurantCollection.filter((restaurant) =>{
-        return restaurant?.info?.sla?.deliveryTime <=30
-      })
-      setrestaurantData(filterData);
-   }
-
-   const handleVeg = () =>{
-    const filterData = restaurantCollection.filter((restaurant) =>{
-     return restaurant?.info?.veg
-   })
-   setrestaurantData(filterData);
-}
-
-const handleToprated = () =>{
-  const filterData = restaurantCollection.filter((restaurant) =>{
-   return restaurant?.info?.avgRating >=4.5
- })
- setrestaurantData(filterData);
-}
-
-  const handleShowall = () =>{
-    setrestaurantData(restaurantCollection);
-  }
-
-
-
-  
-
-  // console.log("component is rendered")
-//   setrestaurantData(restaurantList[1]?.card.card.gridElements?.infoWithStyle?.restaurants);
  
 if(resObject?.loading){
   return (
@@ -91,23 +47,17 @@ if(resObject?.failed){
     </div>
   )
 }
-
-// const data = useRestaurant()
  
  return(
 
       <div>
         <div className="d-flex justify-between">
           <Searchbar collection={resObject.masterData} updater={resObject.updater}/>
-          {/* <input type="text" value={username} onChange={(e)=>setName(e.target.value)}/> */}
-        <div className="d-flex">
-          <button className="btn btn-dark btn-sm mb-3 px-3 mx-2 button " onClick={handleDelivery}>Fast Delivery</button>
-          <button className="btn btn-dark btn-sm mb-3 px-3 mx-2 button" onClick={handleToprated}>Top rated</button>
-          <button className="btn btn-dark btn-sm mb-3 px-3 mx-2 button" onClick={handleVeg}>Pure Veg</button>
-          <button className="btn btn-dark btn-sm mb-3 px-3 mx-2 button" onClick={handleShowall}>Show all</button>
+          <Filters collection={resObject.masterData} updater={resObject.updater} />
+          
+        </div>
 
-        </div>
-        </div>
+        
  
 
        
@@ -121,13 +71,6 @@ if(resObject?.failed){
                   
                    <Restaurantcard
                     key ={restaurant?.info?.id}
-              //  {    imgUrl={IMG_URL+restaurant?.info.cloudinaryImageId}            
-              //    title={restaurant?.info?.name}
-              //    startRating={restaurant?.info?.avgRating}
-              //    deliveryTime={restaurant?.info?.sla?.deliveryTime}
-              //    cuisines={restaurant?.info?.cuisines.join(", ")}
-              //    location={restaurant?.info?.areaName}
-
                {...restaurant?.info}
                     
           />
