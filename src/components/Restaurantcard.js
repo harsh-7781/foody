@@ -7,7 +7,7 @@ const Restaurantcard = ({cloudinaryImageId, name, avgRating, sla, cuisines, area
     // imgUrl, title, startRating, deliveryTime, cuisines, location
 
     return(
-        <Link to={`/menu/${id}`} className="custom-card text-decoration-none text-dark">
+        <Link to={`/menu/${id}`} className="custom-card text-decoration-none text-dark mx-auto ">
            <div className="mb-2">
                 < img 
                     src={IMG_URL+cloudinaryImageId}

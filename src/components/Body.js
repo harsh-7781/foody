@@ -2,8 +2,11 @@ import Carousel from "./Carousel.js"
 import Filters from "./Filters.js"
 import Searchbar from "./Searchbar.js"
 import Cardcontainer from "./Cardcontainer"
+// import { useEffect, useState } from "react"
 
 const Body = () => {
+
+    
     return (
       
       <>
@@ -13,6 +16,7 @@ const Body = () => {
 
         {/* This is the body component */}
         </div>
+        
       <Carousel/>
       <div className="d-flex justify-content-between">
         {/* <Filters/> */}

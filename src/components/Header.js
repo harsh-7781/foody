@@ -16,7 +16,7 @@ const Header = () =>{
    console.log("userData", userData)
    console.log("online status", isOnline);
     return(
-      <nav className="navbar p-0 navbar-expand-sm bg-light navbar-light mb-4">
+      <nav className="navbar p-0 navbar-expand-sm bg-light navbar-light mb-4 container-fluid">
       <div className="container-fluid">
         <Link  className="navbar-brand" to ="">
           <img className="image" src={Logo} style={{width:"80px"}}/>

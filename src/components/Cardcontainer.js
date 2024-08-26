@@ -51,12 +51,13 @@ if(resObject?.failed){
  return(
 
       <div>
-        <div className="d-flex justify-between">
+                 <hr style={{border:"2px solid black"}}/>
+
+        <div className="d-flex justify-between pb-4">
           <Searchbar collection={resObject.masterData} updater={resObject.updater}/>
           <Filters collection={resObject.masterData} updater={resObject.updater} />
           
         </div>
-         <hr style={{border:"2px solid black"}}/>
         
  
 
