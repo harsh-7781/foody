@@ -38,7 +38,7 @@ useEffect(()=>{
     <div className="container" style={{width:"100%"}}>
       <div className="container-fluid overflow-hidden pb-3" style={{mx:"auto"}}>
       <div className="d-flex justify-content-between">
-      <h1 className="font-weight-bold">What's in your mind?</h1>
+      <h1 className="font-weight-bold">What's on your mind?</h1>
     
     <div className="d-flex gap-2">
       <div onClick={handlePrev} className="rounded-pill p-3" style={{background:"lightgrey", cursor:"pointer"}}><FaArrowLeft  /></div>
@@ -52,9 +52,11 @@ useEffect(()=>{
           ))
          }
          </div>
-      </div>
 
+      </div>
+      <hr style={{border:"2px solid black"}}/>
     </div>
+    
    )
       
   return Carousel 

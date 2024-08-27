@@ -2,6 +2,7 @@ import Carousel from "./Carousel.js"
 import Filters from "./Filters.js"
 import Searchbar from "./Searchbar.js"
 import Cardcontainer from "./Cardcontainer"
+import TopRestaurant from "./TopRestaurant.js"
 // import { useEffect, useState } from "react"
 
 const Body = () => {
@@ -18,6 +19,8 @@ const Body = () => {
         </div>
         
       <Carousel/>
+      
+      <TopRestaurant/>
       <div className="d-flex justify-content-between">
         {/* <Filters/> */}
         {/* <Searchbar/> */}
