@@ -35,7 +35,7 @@ useEffect(()=>{
   }
 
    return(
-    <div className="" style={{width:"100%"}}>
+    <div className="container" style={{width:"100%"}}>
       <div className="container-fluid overflow-hidden pb-3" style={{mx:"auto"}}>
       <div className="d-flex justify-content-between">
       <h1 className="font-weight-bold">What's in your mind?</h1>

@@ -4,7 +4,7 @@ const Shimmer = () =>{
        
 
     
-        <div className="custom-card">
+        <div className="custom-card mx-auto">
         <div className="mb-3">
             <div className="shimmerImg">
 

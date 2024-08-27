@@ -40,7 +40,7 @@
 }
 
 .footer{
-  background-color: #2d2d32;
+  background-color: #f5a30c;
 }
 
 .sb__footer{
@@ -65,12 +65,18 @@
   display: flex;
   justify-content: flex-start;
   flex-direction: column;
-  color: white;
+  color: rgb(12, 10, 10);
+}
+
+
+.sb__footer-links_div a:hover{
+  color: black;
 }
 
 .sb__footer-links_div a {
   text-decoration: none;
-  color: rgb(175, 175, 179);
+  color: rgb(14, 13, 13);
+   font-weight: 800;
 }
 
 
@@ -103,8 +109,8 @@
   font-size: 13px;
   line-height: 15px;
   margin-left: 2rem;
-  color: white;
-  font-weight: 600;
+  color: rgb(14, 13, 13);
+  font-weight: 800;
 }
 
 .socialmedia{
@@ -121,8 +127,8 @@ hr{
 .sb__footer-copyright p{
   font-size: 13px;
   line-height: 15px;
-  color: rgb(255, 255, 255);
-  font-weight: 600;
+  color: rgb(14, 13, 13);
+  font-weight: 900;
 }
 
 
