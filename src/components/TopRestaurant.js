@@ -39,7 +39,7 @@ function TopRestaurant() {
     <div onClick={handleNext} className="rounded-pill p-3" style={{background:"lightgrey", cursor:"pointer"}}><FaArrowRight /></div>
   </div>
   </div>
-  <div className="d-flex gap-4 w-full duration-500" style={{translate:`-${value}%`}}>
+  <div className="d-flex gap-4 w-full duration-500 custom" style={{translate:`-${value}%`}}>
              {
                 data.map((restaurant)=>(
                 <div>

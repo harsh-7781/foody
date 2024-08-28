@@ -2,24 +2,24 @@ import { FaArrowRight } from "react-icons/fa";
 import { FaArrowLeft } from "react-icons/fa";
 
 import { useState, useEffect } from "react";
-const Carousel = () => {
+const Carousel = ({data}) => {
 
-  const [data, setData] = useState([]);
+  // const [data, setData] = useState([]);
 
 
    const [value, setValue] = useState(0)
 
-    async function fetchData(){
-      const data = await fetch("https://www.swiggy.com/dapi/restaurants/list/v5?lat=19.0744454&lng=72.91320429999999&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING")
-      const result = await data.json();
-      console.log("data",result?.data?.cards[0]?.card?.card?.imageGridCards?.info);
-      setData(result?.data?.cards[0]?.card?.card?.imageGridCards?.info)
-    }
+//     async function fetchData(){
+//       const data = await fetch("https://www.swiggy.com/dapi/restaurants/list/v5?lat=19.0744454&lng=72.91320429999999&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING")
+//       const result = await data.json();
+//       console.log("data",result?.data?.cards[0]?.card?.card?.imageGridCards?.info);
+//       setData(result?.data?.cards[0]?.card?.card?.imageGridCards?.info)
+//     }
 
 
-useEffect(()=>{
-   fetchData()
-},[])
+// useEffect(()=>{
+//    fetchData()
+// },[])
 
   function handlePrev(){
     if (value > 0) {
